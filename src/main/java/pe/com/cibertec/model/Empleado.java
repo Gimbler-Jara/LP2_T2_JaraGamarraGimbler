@@ -1,6 +1,8 @@
 package pe.com.cibertec.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,8 +28,8 @@ public class Empleado {
 	private String apellido;
 	
 	@Column(name = "fecha_nacimiento", nullable = false)
-	@Temporal(TemporalType.DATE)
-	private Date fechaNacimiento;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fechaNacimiento;
 	
 	@Column(length = 45)
 	private String direccion;

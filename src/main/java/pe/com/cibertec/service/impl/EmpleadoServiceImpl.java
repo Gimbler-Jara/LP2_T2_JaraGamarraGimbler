@@ -34,15 +34,16 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	public void actualizarEmpleado(String id, Empleado empleado) {
 		Empleado _empleado = buscarPorId(id);
 		try {
+			_empleado.setDni(id);
 			_empleado.setNombre(empleado.getNombre());
 			_empleado.setApellido(empleado.getApellido());
 			_empleado.setFechaNacimiento(empleado.getFechaNacimiento());
 			_empleado.setCorreo(empleado.getCorreo());
 			_empleado.setDireccion(empleado.getDireccion());
 			_empleado.setArea(empleado.getArea());
-			empleadoRepository.save(empleado);
+			empleadoRepository.save(_empleado);
 		} catch (Exception e) {
-			throw new RuntimeException("Error al actualizar");
+			throw new RuntimeException("Error al actualizar" + e.getMessage());
 		}
 	}
 

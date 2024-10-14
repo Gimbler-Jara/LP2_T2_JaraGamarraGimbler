@@ -15,7 +15,7 @@ import pe.com.cibertec.service.AreaService;
 
 @Controller
 @RequestMapping("/area")
-public class AreaController {
+public class AreaController { 
 
 	@Autowired
 	private AreaService areaService;
