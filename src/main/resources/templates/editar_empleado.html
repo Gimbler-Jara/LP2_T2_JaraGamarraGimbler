@@ -14,6 +14,10 @@
     </div>
     <form th:action="@{'/editar_empleado/' + ${empleado.dni != null ? empleado.dni : id}}" th:object="${empleado}" method="post">
         <div class="form-group">
+            <label for="dni">DNI:</label>
+            <input type="text" class="form-control" id="dni" th:field="*{dni}" placeholder="Ingrese nombre" required readonly="readonly">
+        </div>
+        <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" class="form-control" id="nombre" th:field="*{nombre}" placeholder="Ingrese nombre" required>
         </div> 
