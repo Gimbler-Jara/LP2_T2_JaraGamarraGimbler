@@ -21,7 +21,7 @@ public class EmpleadoController {
 	private EmpleadoService empleadoService;
 
 	@Autowired
-	private AreaService areaService;
+	private AreaService areaService; 
 
 	@GetMapping("/")
 	public String listarAreas(Model model) {
